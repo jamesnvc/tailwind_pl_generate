@@ -1,7 +1,7 @@
 :- module(grammar_t, []).
 
 :- use_module(library(plunit)).
-:- use_module(tailwind/grammar, [tailwind//1]).
+:- use_module(tailwind_generate/grammar, [tailwind//1]).
 :- begin_tests(tailwind).
 
 test(prefixes_1,

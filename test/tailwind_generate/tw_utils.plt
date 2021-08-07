@@ -1,7 +1,7 @@
 :- module(tw_utils_t, []).
 
 :- use_module(library(plunit)).
-:- use_module(tailwind/tw_utils).
+:- use_module(tailwind_generate/tw_utils).
 
 :- begin_tests(tw_utils).
 

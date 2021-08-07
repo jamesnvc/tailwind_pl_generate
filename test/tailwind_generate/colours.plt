@@ -1,7 +1,7 @@
 :- module(colours_t, []).
 
 :- use_module(library(plunit)).
-:- use_module(tailwind/colours).
+:- use_module(tailwind_generate/colours).
 
 :- begin_tests(colours).
 
