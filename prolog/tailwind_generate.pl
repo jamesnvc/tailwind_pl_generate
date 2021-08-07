@@ -1,5 +1,5 @@
-:- module(generate, [text_tw_css/2,
-                     tw_from_file/2]).
+:- module(tailwind_generate, [text_tw_css/2,
+                              tw_from_file/2]).
 /** <module> generate CSS from text containing selectors
 
 Predicates for generating tailwind CSS stylesheets based on used selectors
@@ -13,7 +13,7 @@ Predicates for generating tailwind CSS stylesheets based on used selectors
 :- use_module(library(ordsets), [list_to_ord_set/2]).
 :- use_module(library(yall)).
 
-:- use_module(grammar, [tailwind//1, prefixes//2]).
+:- use_module(tailwind/grammar, [tailwind//1, prefixes//2]).
 
 tw_selector(Media, Variants, Styles) -->
     prefixes(Media, Variants), tailwind(Styles).

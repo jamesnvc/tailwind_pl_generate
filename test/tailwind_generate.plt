@@ -1,11 +1,11 @@
-:- module(generate_t, []).
+:- module(tailwind_generate_t, []).
 
 :- use_module(library(plunit)).
-:- use_module(tailwind/generate).
+:- use_module(tailwind_generate).
 
 :- use_module(library(filesex), [relative_file_name/3]).
 
-:- begin_tests(generate).
+:- begin_tests(tailwind_generate).
 
 
 test(multiple_selectors_1,
@@ -60,9 +60,9 @@ test(text_from_file_1,
                      server,set_cleanup_handlers,shutdown,syslog,term,test_reading,
                      text,'text-red-500',thing,thread,thread_pool,true,use_syslog,
                                         user,usr2])]) :-
-    module_property(generate_t, file(ThisFile)),
+    module_property(tailwind_generate_t, file(ThisFile)),
     relative_file_name(TestFile, ThisFile, "./test_reading.pl"),
-    generate:text_from_file(TestFile, Texts).
+    tailwind_generate:text_from_file(TestFile, Texts).
 
 test(style_from_file_1,
      [true(Style == ['.bg-red-50'('background-color'("rgba(254, 242, 242, var(--pl-bg-opacity, 1))")),
@@ -73,7 +73,7 @@ test(style_from_file_1,
                      '.text-red-500'(color("rgba(239, 68, 68, var(--pl-text-opacity,1))"))
 
                     ])]) :-
-    module_property(generate_t, file(ThisFile)),
+    module_property(tailwind_generate_t, file(ThisFile)),
     relative_file_name(TestFile, ThisFile, "./test_reading.pl"),
     tw_from_file(TestFile, Style).
 test(style_from_file_2,
@@ -96,8 +96,8 @@ test(style_from_file_2,
                      '.text-red-500'(color("rgba(239, 68, 68, var(--pl-text-opacity,1))"))
 
                     ])]) :-
-    module_property(generate_t, file(ThisFile)),
+    module_property(tailwind_generate_t, file(ThisFile)),
     relative_file_name(TestFile, ThisFile, "./test_reading_2.pl"),
     tw_from_file(TestFile, Style).
 
-:- end_tests(generate).
+:- end_tests(tailwind_generate).
