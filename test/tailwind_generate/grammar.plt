@@ -261,4 +261,10 @@ test(display_inline,
     [ true(Style == display(inline)) ]) :-
     phrase(tailwind(Style), `inline`).
 
+test(visibility1, [true(Style == (visibility(visible)))]) :-
+    phrase(tailwind(Style), `visible`).
+test(visibility2, [true(Style == (visibility(hidden)))]) :-
+    phrase(tailwind(Style), `invisible`).
+
+
 :- end_tests(tailwind).

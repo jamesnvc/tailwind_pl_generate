@@ -733,7 +733,9 @@ positioning_mode_dirs('inset-x', [right, left]) :- !.
 positioning_mode_dirs('inset-y', [top, bottom]) :- !.
 positioning_mode_dirs(Dir, [Dir]).
 
-tailwind(visibility(Vis)) --> one_of(["visibile", "invisible"], Vis), !.
+tailwind(visibility(Vis)) -->
+    one_of(["visible", "invisible"], Vis0), !,
+    { Vis0 == invisible -> Vis = hidden ; Vis = Vis0 }.
 
 tailwind('z-index'("auto")) --> "z-auto", !.
 tailwind('z-index'(Index)) --> "z-", integer(Index), !.
