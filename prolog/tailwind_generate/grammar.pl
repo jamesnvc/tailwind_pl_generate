@@ -762,9 +762,9 @@ tailwind('min-width'(Width)) -->
 
 tailwind('max-width'(Width)) -->
     "max-w-", alternates([length(Val), length_unit(Val), fraction(Val),
-                      percentage(Val), full_100(Val), auto(Val),
-                      screen_100vw(Val), min_content(Val), max_content(Val),
-                      num(Val)]), !,
+                          percentage(Val), full_100(Val), unset(Val),
+                          screen_100vw(Val), min_content(Val), max_content(Val),
+                          num(Val)]), !,
     { value_unit_css(Val, Width, _{zero_unit: "",
                                    number: _{unit: rem, value_fn: div_4},
                                    fraction: _{unit: '%', value_fn: mul_100}}) }.
@@ -789,9 +789,9 @@ tailwind('min-height'(Height)) -->
 
 tailwind('max-height'(Height)) -->
     "max-h-", alternates([length(Val), length_unit(Val), fraction(Val),
-                      percentage(Val), full_100(Val), auto(Val),
-                      screen_100vw(Val), min_content(Val), max_content(Val),
-                      num(Val)]), !,
+                          percentage(Val), full_100(Val), unset(Val),
+                          screen_100vw(Val), min_content(Val), max_content(Val),
+                          num(Val)]), !,
     { value_unit_css(Val, Height, _{zero_unit: "",
                                    number: _{unit: rem, value_fn: div_4},
                                    fraction: _{unit: '%', value_fn: mul_100}}) }.

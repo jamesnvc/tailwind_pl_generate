@@ -266,5 +266,7 @@ test(visibility1, [true(Style == (visibility(visible)))]) :-
 test(visibility2, [true(Style == (visibility(hidden)))]) :-
     phrase(tailwind(Style), `invisible`).
 
+test(max_height, [true( Style == 'max-height'("unset") )]) :-
+    phrase(tailwind(Style), `max-h-unset`).
 
 :- end_tests(tailwind).

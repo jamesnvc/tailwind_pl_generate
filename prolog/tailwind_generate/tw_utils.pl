@@ -5,6 +5,7 @@
                      direction//1,
                      axis//1,
                      auto//1,
+                     unset//1,
                      num//1,
                      fraction//1,
                      percentage//1,
@@ -48,6 +49,7 @@ unit_for(_, "").
 value_unit_css(auto, "auto", _):- !.
 value_unit_css(none, "none", _):- !.
 value_unit_css(full, "full", _):- !.
+value_unit_css(unset, "unset", _):- !.
 value_unit_css(min_content, "min-content", _):- !.
 value_unit_css(max_content, "max-content", _):- !.
 value_unit_css(full_100, "100%", _):- !.
@@ -115,6 +117,10 @@ axis(axis(A)) --> one_of(["x", "y"], A).
 %
 %  DCG to parse an "auto" value.
 auto(auto) --> "auto".
+%! unset(-Unset)// is semidet.
+%
+%  DCG to parse an "unset" value.
+unset(unset) --> "unset".
 %! full_100(-Full)// is semidet.
 %
 %  DCG to parse a "full" value
